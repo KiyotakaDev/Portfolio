@@ -7,6 +7,12 @@
   font-display: swap;
 }
 
+/* Variables */
+:root {
+  --shocking-pink: #fb32b7;
+  --dark-purple: #040308;
+}
+
 /* Default style reset */
 * {
   margin: 0;
