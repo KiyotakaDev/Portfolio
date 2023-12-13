@@ -32,6 +32,13 @@ export default {
         },
         neon: "#00fff0",
       },
+      screens: {
+        "s": "370px",
+        "ls": "420px",
+        "1k": "1920px",
+        "2k": "2560px",
+        "4k": "3840px",
+      },
     },
   },
   plugins: [],
