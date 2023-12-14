@@ -1,7 +1,9 @@
-import React from "react";
+import React, { lazy } from "react";
 import { motions, styles } from "../utils";
 import { motion } from "framer-motion";
 import SectionWrapper from "../hoc/SectionWrapper";
+
+const Tech = lazy(() => import("./Tech"))
 
 const About = () => {
   return (
@@ -31,6 +33,8 @@ const About = () => {
         <span className="text-indigo-300">Three.js.</span> I'm tenacious and
         energetic with a strong desire to keep learning.
       </motion.p>
+
+      <Tech />
     </>
   );
 };

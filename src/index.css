@@ -26,3 +26,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.neon-shadow {
+  text-shadow: 0 0 10px #00fff0, 0 0 20px #00fff0, 0 0 30px #00fff0;
+}
