@@ -4,4 +4,9 @@ const navLinks = [
   { name: "Projects", id: "projects"}
 ]
 
-export { navLinks }
+const technologies = [
+  { name: "HTML5", icon: () => import('/tech/html.png')},
+  { name: "CSS3", icon: () => import('/tech/css.png')}
+]
+
+export { navLinks, technologies }
