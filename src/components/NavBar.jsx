@@ -2,14 +2,23 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { styles, motions } from "../utils";
 import { navLinks } from "../constants";
-import { motion, useScroll, useMotionValueEvent } from 'framer-motion'
+import { motion, useScroll, useMotionValueEvent } from "framer-motion";
 
-const NavLinks = ({ ulStyle, active, setActive, toggle, setToggle, direction }) => {
+const NavLinks = ({
+  ulStyle,
+  active,
+  setActive,
+  toggle,
+  setToggle,
+  direction,
+  animate,
+}) => {
   return (
     <ul className={`${ulStyle}`}>
       {navLinks.map((link, index) => (
         <motion.li
           variants={motions.navLinksMotion("spring", 0.5 * index, direction)}
+          animate={animate}
           key={index}
           className={`${
             active == link.name ? "text-leveled-400" : "text-iced-200"
@@ -85,20 +94,24 @@ const ToggleMenu = ({ toggle, setToggle }) => {
 };
 
 const NavBar = () => {
-  const { scrollY } = useScroll()
+  const { scrollY } = useScroll();
 
   const [active, setActive] = useState("");
   const [toggle, setToggle] = useState(false);
   const [hidden, setHidden] = useState(false);
 
   useMotionValueEvent(scrollY, "change", (latest) => {
-    const previous = scrollY.getPrevious()
-    latest > previous && latest > 150 ? setHidden(true) : setHidden(false)
-  })
-
+    const previous = scrollY.getPrevious();
+    latest > previous && latest > 150 ? setHidden(true) : setHidden(false);
+  });
 
   return (
-    <nav
+    <motion.nav
+      variants={{
+        show: { y: 0 },
+        hidden: { y: "-100%" },
+      }}
+      animate={hidden ? "hidden" : "show"}
       className={`${styles.navPadding} z-40 fixed top-0 left-0 w-full flex items-center bg-leveled-950 backdrop-filter backdrop-blur-sm bg-opacity-10`}
     >
       {/* Navbar bigger devices */}
@@ -138,23 +151,26 @@ const NavBar = () => {
           <ToggleMenu toggle={toggle} setToggle={setToggle} />
           <motion.div
             variants={motions.navLinksMotion("spring", 0, "left")}
-            animate={toggle ? "open" : "closed"}
+            animate={hidden ? "closed" : toggle ? "open" : "closed"}
             className={`${
               toggle ? "flex" : ""
             } bg-leveled-950 bg-opacity-0 backdrop-filter backdrop-blur-sm p-6 absolute top-24 right-0  min-w-fit z-10 rounded-bl-lg`}
           >
             <NavLinks
-              ulStyle={"list-none flex justify-end items-center w-full flex-col gap-4 text-3xl"}
+              ulStyle={
+                "list-none flex justify-end items-center w-full flex-col gap-4 text-3xl"
+              }
               active={active}
               setActive={setActive}
               toggle={toggle}
               setToggle={setToggle}
               direction="left"
+              animate={hidden ? "closed" : toggle ? "open" : "closed"}
             />
           </motion.div>
         </div>
       </div>
-    </nav>
+    </motion.nav>
   );
 };
 
