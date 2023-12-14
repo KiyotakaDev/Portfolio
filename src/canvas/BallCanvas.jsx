@@ -31,11 +31,29 @@ const Ball = ({ icon }) => {
   );
 };
 
-const BallCanvas = ({ techIcon }) => {
+const BallCanvas = ({ technology }) => {
+  const { icon } = technology
+
+  const [resolvedIcon, setResolvedIcon] = useState()
+
+  useEffect(() => {
+    const loadIcon = async () => {
+      try {
+        const iconModule = await icon()
+        const iconUrl = iconModule.default
+        setResolvedIcon(iconUrl)
+      } catch (error) {
+        console.error("Icon load error: ", error)
+      }
+    }
+
+    loadIcon()
+  }, [])
+
   return (
     <Canvas>
       <OrbitControls enableZoom={false} enableDamping dampingFactor={0.25} />
-      <Ball icon={techIcon.default} />
+      <Ball icon={resolvedIcon} />
     </Canvas>
   );
 };
