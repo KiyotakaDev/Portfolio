@@ -4,7 +4,7 @@ import PrincipalLoader from "./loaders/PrincipalLoader";
 const Scene = lazy(() => import("./canvas/Scene"));
 const NavBar = lazy(() => import("./components/NavBar"));
 const Head = lazy(() => import("./components/Head"));
-const About = lazy(() => import("./components/About"))
+const About = lazy(() => import("./components/About"));
 
 const App = () => {
   return (
@@ -16,7 +16,9 @@ const App = () => {
         <Head />
       </Suspense>
       <Suspense fallback={null}>
-        <About />
+        <div className="bg-leveled-900">
+          <About />
+        </div>
       </Suspense>
     </>
   );
