@@ -31,11 +31,11 @@ const SectionWrapper = (Component, idName) => {
         variants={staggerContainer()}
         initial="hidden"
         whileInView="show"
-        viewport={{ amount: 0.2 }}
-        className={`${wrapperPadding} ${wrapperContainer}`}
+        viewport={{ amount: 0.3 }}
+        className={`${wrapperPadding} ${wrapperContainer} mx-auto relative`}
       >
         {/* Reference for nav */}
-        <span className={`${navReferencePosition}`} id={idName}>
+        <span className={`${navReferencePosition} block`} id={idName}>
           &nbsp;
         </span>
         <Component />
