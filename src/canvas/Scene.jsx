@@ -59,7 +59,7 @@ const Scene = () => {
         overflow: "hidden",
         display: "block",
         backgroundColor: "var(--dark-purple)",
-        zIndex: 30,
+        zIndex: 20,
       }}
     >
       <Experience />
