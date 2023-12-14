@@ -8,4 +8,4 @@ const styles = {
     "text-2xl xs:text-3xl sm:text-4xl xl:text-5xl 2k:text-7xl 4k:text-8xl",
 }
 
-export { styles }
+export default styles
