@@ -3,3 +3,5 @@ const navLinks = [
   { name: "Work", id: "work" },
   { name: "Projects", id: "projects"}
 ]
+
+export { navLinks }
