@@ -1,26 +1,24 @@
 import { Canvas, useFrame } from "@react-three/fiber";
-import React, { useRef } from "react";
+import React, { lazy, useRef } from "react";
 import { MathUtils } from "three";
+
+const HighPowerShader = lazy(() => import("./shaders/HighPowerShader"))
 
 const Experience = () => {
   const meshRef = useRef()
 
   useFrame(({ pointer, clock }, _) => {
-    const { position, rotation } = meshRef.current
+    const { position, rotation, material } = meshRef.current
 
     position.x = MathUtils.lerp(position.x, pointer.x * 2, 0.05)
     position.y = MathUtils.lerp(position.y, pointer.y * 2, 0.05)
     rotation.x = MathUtils.lerp(rotation.x, pointer.y * 1.2, 0.05)
     rotation.y = MathUtils.lerp(rotation.y, -pointer.x * 1.2, 0.05)
 
+    material.uniforms.uTime.value = 0.4 * clock.getElapsedTime()
   }, [])
 
-  return (
-    <mesh ref={meshRef}>
-      <boxGeometry />
-      <meshBasicMaterial />
-    </mesh>
-  );
+  return <HighPowerShader meshRef={meshRef} />
 };
 
 const Scene = () => {
