@@ -3,7 +3,7 @@ import { Canvas, useFrame, useLoader } from "@react-three/fiber";
 import React, { useEffect, useRef, useState } from "react";
 import { BackSide, TextureLoader } from "three";
 
-const Ball = ({ icon, isLoading }) => {
+const Ball = ({ icon }) => {
   const planeRef = useRef();
 
   // Matcap
@@ -16,7 +16,7 @@ const Ball = ({ icon, isLoading }) => {
   }, []);
 
   return (
-    <Float>
+    <Float speed={1.75} rotationIntensity={1} floatIntensity={2}>
       <group>
         <mesh>
           <sphereGeometry args={[3, 10, 10]} />
@@ -24,43 +24,18 @@ const Ball = ({ icon, isLoading }) => {
         </mesh>
         <mesh ref={planeRef}>
           <planeGeometry args={[4, 4]} />
-          {isLoading ? (
-            <>isloading</>
-          ) : (
-            <meshBasicMaterial map={iconMap} transparent alphaTest={0.5} />
-          )}
+          <meshBasicMaterial map={iconMap} transparent alphaTest={0.5} />
         </mesh>
       </group>
     </Float>
   );
 };
 
-const BallCanvas = ({ technology }) => {
-  const { icon } = technology;
-
-  const [loadedIcon, setLoadedIcon] = useState(null);
-  const [isLoading, setIsLoading] = useState(true);
-
-  useEffect(() => {
-    const loadIcon = async () => {
-      try {
-        const resolvedIcon = await icon();
-        const iconUrl = await resolvedIcon.default;
-        setLoadedIcon(iconUrl);
-      } catch (error) {
-        console.error("Loading icon error: ", error);
-      } finally {
-        setIsLoading(false);
-      }
-    };
-
-    loadIcon();
-  }, [icon]);
-
+const BallCanvas = ({ techIcon }) => {
   return (
     <Canvas>
       <OrbitControls enableZoom={false} enableDamping dampingFactor={0.25} />
-      {isLoading ? null : <Ball icon={loadedIcon} isLoading={isLoading} />}
+      <Ball icon={techIcon.default} />
     </Canvas>
   );
 };
