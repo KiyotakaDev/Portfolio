@@ -1,14 +1,15 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { styles } from "../utils/styles";
+import { styles, motions } from "../utils";
 import { navLinks } from "../constants";
-import { motion } from 'framer-motion'
+import { motion, useScroll, useMotionValueEvent } from 'framer-motion'
 
-const NavLinks = ({ ulStyle, active, setActive, toggle, setToggle }) => {
+const NavLinks = ({ ulStyle, active, setActive, toggle, setToggle, direction }) => {
   return (
     <ul className={`${ulStyle}`}>
       {navLinks.map((link, index) => (
-        <li
+        <motion.li
+          variants={motions.navLinksMotion("spring", 0.5 * index, direction)}
           key={index}
           className={`${
             active == link.name ? "text-leveled-400" : "text-iced-200"
@@ -19,7 +20,7 @@ const NavLinks = ({ ulStyle, active, setActive, toggle, setToggle }) => {
           }}
         >
           <a href={`#${link.id}`} children={link.name} />
-        </li>
+        </motion.li>
       ))}
     </ul>
   );
@@ -84,9 +85,17 @@ const ToggleMenu = ({ toggle, setToggle }) => {
 };
 
 const NavBar = () => {
+  const { scrollY } = useScroll()
+
   const [active, setActive] = useState("");
   const [toggle, setToggle] = useState(false);
   const [hidden, setHidden] = useState(false);
+
+  useMotionValueEvent(scrollY, "change", (latest) => {
+    const previous = scrollY.getPrevious()
+    latest > previous && latest > 150 ? setHidden(true) : setHidden(false)
+  })
+
 
   return (
     <nav
@@ -127,7 +136,9 @@ const NavBar = () => {
         <div className="flex md:hidden flex-col justify-end items-center">
           {/* Hamburguer to X */}
           <ToggleMenu toggle={toggle} setToggle={setToggle} />
-          <div
+          <motion.div
+            variants={motions.navLinksMotion("spring", 0, "left")}
+            animate={toggle ? "open" : "closed"}
             className={`${
               toggle ? "flex" : ""
             } bg-leveled-950 bg-opacity-0 backdrop-filter backdrop-blur-sm p-6 absolute top-24 right-0  min-w-fit z-10 rounded-bl-lg`}
@@ -138,8 +149,9 @@ const NavBar = () => {
               setActive={setActive}
               toggle={toggle}
               setToggle={setToggle}
+              direction="left"
             />
-          </div>
+          </motion.div>
         </div>
       </div>
     </nav>
