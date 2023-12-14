@@ -36,7 +36,7 @@ extend({ MobileCustomShader })
 const MobileShader = ({ meshRef }) => {
   return (
     <mesh ref={meshRef}>
-      <circleGeometry args={[1, 64]} />
+      <circleGeometry args={[0.6, 64]} />
       <mobileCustomShader />
     </mesh>
   )
