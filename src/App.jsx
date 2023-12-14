@@ -4,6 +4,7 @@ import PrincipalLoader from "./loaders/PrincipalLoader";
 const Scene = lazy(() => import("./canvas/Scene"));
 const NavBar = lazy(() => import("./components/NavBar"));
 const Head = lazy(() => import("./components/Head"));
+const About = lazy(() => import("./components/About"))
 
 const App = () => {
   return (
@@ -13,6 +14,9 @@ const App = () => {
         <Scene />
         <NavBar />
         <Head />
+      </Suspense>
+      <Suspense fallback={null}>
+        <About />
       </Suspense>
     </>
   );
