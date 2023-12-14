@@ -4,6 +4,7 @@ import { MathUtils } from "three";
 
 const HighPowerShader = lazy(() => import("./shaders/HighPowerShader"))
 const LowPowerShader = lazy(() => import("./shaders/LowPowerShader"))
+const MobileShader = lazy(() => import("./shaders/MobileShader"))
 
 const Experience = () => {
   const meshRef = useRef()
@@ -19,7 +20,7 @@ const Experience = () => {
     material.uniforms.uTime.value = 0.4 * clock.getElapsedTime()
   }, [])
 
-  return <LowPowerShader meshRef={meshRef} />
+  return <MobileShader meshRef={meshRef} />
 };
 
 const Scene = () => {
