@@ -39,6 +39,9 @@ export default {
         "2k": "2560px",
         "4k": "3840px",
       },
+      boxShadow: {
+        "iconInner": "inset -13px -15px 84px 34px rgba(0,0,0,0.71);"
+      }
     },
   },
   plugins: [],
