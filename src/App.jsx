@@ -6,6 +6,7 @@ import Head from "./components/Head";
 import Experience from "./components/Experience";
 import Project from "./components/Project";
 import Footer from "./components/Footer";
+import InitialScreen from "./components/IntialScreen";
 
 const About = lazy(() => import("./components/About"));
 
@@ -13,9 +14,12 @@ const App = () => {
   return (
     <>
       {/* Principal content */}
-      <Scene />
+      <InitialScreen />
       <NavBar />
       <Head />
+      <Suspense fallback={<PrincipalLoader />}>
+        <Scene />
+      </Suspense>
       <div className="bg-leveled-900">
         <Suspense fallback={<PrincipalLoader />}>
           <About />
