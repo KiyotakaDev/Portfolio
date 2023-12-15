@@ -4,6 +4,7 @@ import Scene from "./canvas/Scene";
 import NavBar from "./components/NavBar";
 import Head from "./components/Head";
 import Experience from "./components/Experience";
+import Project from "./components/Project";
 
 const About = lazy(() => import("./components/About"));
 
@@ -14,12 +15,17 @@ const App = () => {
       <Scene />
       <NavBar />
       <Head />
-      <Suspense fallback={<PrincipalLoader />}>
-        <div className="bg-leveled-900">
+      <div className="bg-leveled-900">
+        <Suspense fallback={<PrincipalLoader />}>
           <About />
+        </Suspense>
+        <Suspense fallback={<PrincipalLoader />}>
           <Experience />
-        </div>
-      </Suspense>
+        </Suspense>
+        <Suspense fallback={<PrincipalLoader />}>
+          <Project />
+        </Suspense>
+      </div>
     </>
   );
 };
