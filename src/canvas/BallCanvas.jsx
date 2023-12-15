@@ -57,7 +57,7 @@ const BallCanvas = ({ technology, styles }) => {
         <OrbitControls enableZoom={false} enableDamping dampingFactor={0.25} />
         <Ball icon={resolvedIcon} />
       </Canvas>
-      <p className={`${styles.portfolioSubText} text-center text-white block`} children={name} />
+      <p className={`${styles.portfolioSubText} text-center text-white`} children={name} />
     </>
   );
 };
