@@ -62,4 +62,40 @@ const experiences = [
   },
 ];
 
-export { navLinks, technologies, experiences };
+const colors = {
+  react: "from-white via-blue-500 to-blue-700",
+  tailwind: "rom-white via-neon-500 to-sky-500",
+  zustand: "from-white via-orange-500 to-amber-700",
+  mongo: "from-white via-emerald-500 to-green-700",
+  express: "from-white via-pink-500 to-red-700",
+  socket: "from-white to-black",
+};
+const projects = [
+  {
+    name: "PokeAPI",
+    description:
+      "API consumptio for sampling data fetched from the PokeAPI, filtered by type, and searchable by name or character",
+    tags: [
+      { name: "React", color: colors.react },
+      { name: "Tailwind", color: colors.tailwind },
+    ],
+    image: () => import("/projects/pokeApi-project.png"),
+    source_code_link: "https://github.com/KiyotakaDev/PokeApi",
+  },
+  {
+    name: "Chappy",
+    description: "Real-time chat application whit user authentication",
+    tags: [
+      { name: "React", color: colors.react },
+      { name: "Tailwind", color: colors.tailwind },
+      { name: "Zustand", color: colors.zustand },
+      { name: "Mongo", color: colors.mongo },
+      { name: "Express", color: colors.express },
+      { name: "Socket", color: colors.socket },
+    ],
+    image: () => import("/projects/chappy-project.png"),
+    source_code_link: "https://github.com/KiyotakaDev/chappy-",
+  },
+];
+
+export { navLinks, technologies, experiences, projects };
