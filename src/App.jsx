@@ -1,21 +1,19 @@
 import React, { lazy, Suspense } from "react";
 import PrincipalLoader from "./loaders/PrincipalLoader";
+import Scene from "./canvas/Scene";
+import NavBar from "./components/NavBar";
+import Head from "./components/Head";
 
-const Scene = lazy(() => import("./canvas/Scene"));
-const NavBar = lazy(() => import("./components/NavBar"));
-const Head = lazy(() => import("./components/Head"));
 const About = lazy(() => import("./components/About"));
 
 const App = () => {
   return (
     <>
       {/* Principal content */}
+      <Scene />
+      <NavBar />
+      <Head />
       <Suspense fallback={<PrincipalLoader />}>
-        <Scene />
-        <NavBar />
-        <Head />
-      </Suspense>
-      <Suspense fallback={null}>
         <div className="bg-leveled-900">
           <About />
         </div>
