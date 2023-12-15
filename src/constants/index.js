@@ -64,7 +64,7 @@ const experiences = [
 
 const colors = {
   react: "from-white via-blue-500 to-blue-700",
-  tailwind: "rom-white via-neon-500 to-sky-500",
+  tailwind: "rom-white via-neon to-sky-500",
   zustand: "from-white via-orange-500 to-amber-700",
   mongo: "from-white via-emerald-500 to-green-700",
   express: "from-white via-pink-500 to-red-700",
