@@ -47,7 +47,8 @@ const Experience = () => {
 
   const ShaderToRender = determinateShaderToRender();
 
-  return <ShaderToRender meshRef={meshRef} />;
+  // return <ShaderToRender meshRef={meshRef} />;
+  return <HighPowerShader />
 };
 
 const Scene = () => {
