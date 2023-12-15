@@ -36,15 +36,14 @@ const Head = () => {
             Camilo
           </span>
           <div className="pt-1 lg:pt-3 2k:pt-5 4k:pt-6">
-          <p className={`${styles.portfolioSubText}`}>
-            I develop <span className="text-leveled-300">Full Stack</span> web
-            applications,{" "}
-          </p>
-          <p className={`${styles.portfolioSubText}`}>
-            user interfaces and{" "}
-            <span className="text-iced-300">3D visuals.</span>
-          </p>
-
+            <p className={`${styles.portfolioSubText}`}>
+              I develop <span className="text-leveled-300">Full Stack</span> web
+              applications,{" "}
+            </p>
+            <p className={`${styles.portfolioSubText}`}>
+              user interfaces and{" "}
+              <span className="text-iced-300">3D visuals.</span>
+            </p>
           </div>
         </div>
         {/* info <- */}

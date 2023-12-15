@@ -1,6 +1,6 @@
-import { shaderMaterial } from '@react-three/drei'
-import { extend } from '@react-three/fiber'
-import React from 'react'
+import { shaderMaterial } from "@react-three/drei";
+import { extend } from "@react-three/fiber";
+import React from "react";
 
 const LowPowerCustomShader = shaderMaterial(
   { uTime: 0 },
@@ -31,9 +31,9 @@ const LowPowerCustomShader = shaderMaterial(
       gl_FragColor = vec4(1.0, uv, 1.0);
     }
   `
-)
+);
 
-extend({ LowPowerCustomShader })
+extend({ LowPowerCustomShader });
 
 const LowPowerShader = ({ meshRef }) => {
   return (
@@ -41,7 +41,7 @@ const LowPowerShader = ({ meshRef }) => {
       <sphereGeometry args={[1, 32, 32]} />
       <lowPowerCustomShader wireframe={true} />
     </mesh>
-  )
-}
+  );
+};
 
-export default LowPowerShader
+export default LowPowerShader;

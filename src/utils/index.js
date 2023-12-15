@@ -1,2 +1,2 @@
-export { default as motions } from './motions'
-export { default as styles } from './styles'
+export { default as motions } from "./motions";
+export { default as styles } from "./styles";

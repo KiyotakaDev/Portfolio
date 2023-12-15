@@ -8,7 +8,8 @@ const styles = {
     "text-xl s:text-2xl sm:text-3xl md:text-4xl 2k:text-7xl 4k:text-8xl lg:leading-[2.5rem]",
   portfolioLinkText:
     "text-2xl xs:text-3xl sm:text-4xl xl:text-5xl 2k:text-7xl 4k:text-8xl",
-  portfolioSmallerText: "text-lg s:text-xl sm:text-2xl md:text-3xl 2k:text-6xl 4k:text-7xl lg:leading-[2rem]",
+  portfolioSmallerText:
+    "text-lg s:text-xl sm:text-2xl md:text-3xl 2k:text-6xl 4k:text-7xl lg:leading-[2rem]",
 };
 
 export default styles;

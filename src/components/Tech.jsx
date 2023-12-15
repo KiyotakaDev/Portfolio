@@ -21,7 +21,8 @@ const determinateToRender = () => {
 const Tech = () => {
   const ballSize =
     "h-16 h-20 md:h-28 lg:h-32 2k:h-52 4k:h-64 w-16 w-20 md:w-28 lg:w-32 2k:w-52 4k:w-64";
-  const ballGap = "gap-x-6 md:gap-x-10 gap-y-10 2k:gap-x-32 md:gap-y-16 2k:gap-y-36";
+  const ballGap =
+    "gap-x-6 md:gap-x-10 gap-y-10 2k:gap-x-32 md:gap-y-16 2k:gap-y-36";
 
   const ComponentToRender = determinateToRender();
 

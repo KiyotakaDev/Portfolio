@@ -3,7 +3,7 @@ import { motions, styles } from "../utils";
 import { motion } from "framer-motion";
 import SectionWrapper from "../hoc/SectionWrapper";
 
-const Tech = lazy(() => import("./Tech"))
+const Tech = lazy(() => import("./Tech"));
 
 const About = () => {
   return (

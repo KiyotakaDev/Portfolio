@@ -1,6 +1,6 @@
-import { shaderMaterial } from '@react-three/drei'
-import { extend } from '@react-three/fiber'
-import React from 'react'
+import { shaderMaterial } from "@react-three/drei";
+import { extend } from "@react-three/fiber";
+import React from "react";
 
 const MobileCustomShader = shaderMaterial(
   { uTime: 0 },
@@ -29,9 +29,9 @@ const MobileCustomShader = shaderMaterial(
       gl_FragColor = vec4(uv, 1.0, 1.0);
     }
   `
-)
+);
 
-extend({ MobileCustomShader })
+extend({ MobileCustomShader });
 
 const MobileShader = ({ meshRef }) => {
   return (
@@ -39,7 +39,7 @@ const MobileShader = ({ meshRef }) => {
       <circleGeometry args={[0.6, 64]} />
       <mobileCustomShader />
     </mesh>
-  )
-}
+  );
+};
 
-export default MobileShader
+export default MobileShader;

@@ -55,7 +55,7 @@ const motions = {
         transition: { type: type, delay: delay, duration: duration },
       },
     };
-  }
-}
+  },
+};
 
-export default motions
+export default motions;

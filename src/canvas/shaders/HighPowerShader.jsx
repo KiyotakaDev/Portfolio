@@ -1,9 +1,9 @@
-import { shaderMaterial } from '@react-three/drei'
-import { extend } from '@react-three/fiber'
-import React from 'react'
+import { shaderMaterial } from "@react-three/drei";
+import { extend } from "@react-three/fiber";
+import React from "react";
 
 const HighPowerCustomShader = shaderMaterial(
-  { uTime: 0 }, 
+  { uTime: 0 },
   `
     uniform float uTime;
 
@@ -63,9 +63,9 @@ const HighPowerCustomShader = shaderMaterial(
   // (self) => {
   //   self.side = 2
   // }
-)
+);
 
-extend({ HighPowerCustomShader })
+extend({ HighPowerCustomShader });
 
 const HighPowerShader = ({ meshRef }) => {
   return (
@@ -73,7 +73,7 @@ const HighPowerShader = ({ meshRef }) => {
       <icosahedronGeometry args={[1, 200]} />
       <highPowerCustomShader />
     </mesh>
-  )
-}
+  );
+};
 
-export default HighPowerShader
+export default HighPowerShader;

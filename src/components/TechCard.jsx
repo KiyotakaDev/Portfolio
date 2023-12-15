@@ -26,7 +26,10 @@ const TechCard = ({ technology, styles }) => {
           <img src={resolvedImage} alt={name} loading="lazy" />
         </div>
       </div>
-      <p className={`${styles.portfolioSmallerText} text-white text-center`} children={name} />
+      <p
+        className={`${styles.portfolioSmallerText} text-white text-center`}
+        children={name}
+      />
     </>
   );
 };
