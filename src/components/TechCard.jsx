@@ -10,7 +10,9 @@ const TechCard = ({ technology }) => {
     const loadIcon = async () => {
       try {
         const iconModule = await icon();
+        console.log(iconModule);
         const iconUrl = iconModule.default;
+        console.log(iconUrl);
         setResolvedImage(iconUrl);
       } catch (error) {
         console.error("Icon load error: ", error);

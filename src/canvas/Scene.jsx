@@ -1,6 +1,8 @@
 import { Canvas, useFrame } from "@react-three/fiber";
-import React, { lazy, useRef } from "react";
+import React, { Suspense, lazy, useRef } from "react";
 import { MathUtils } from "three";
+import CanvasLoader from "./CanvasLoader";
+import { Preload } from "@react-three/drei";
 
 const HighPowerShader = lazy(() => import("./shaders/HighPowerShader"));
 const LowPowerShader = lazy(() => import("./shaders/LowPowerShader"));
@@ -47,8 +49,7 @@ const Experience = () => {
 
   const ShaderToRender = determinateShaderToRender();
 
-  // return <ShaderToRender meshRef={meshRef} />;
-  return <HighPowerShader meshRef={meshRef} />
+  return <ShaderToRender meshRef={meshRef} />;
 };
 
 const Scene = () => {
@@ -66,7 +67,10 @@ const Scene = () => {
         zIndex: 20,
       }}
     >
-      <Experience />
+      <Suspense fallback={<CanvasLoader fontSize={30} />}>
+        <Experience />
+      </Suspense>
+      <Preload all />
     </Canvas>
   );
 };

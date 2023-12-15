@@ -1,8 +1,9 @@
-import { Float, OrbitControls } from "@react-three/drei";
+import { Float, OrbitControls, Preload } from "@react-three/drei";
 import { Canvas, useFrame, useLoader } from "@react-three/fiber";
-import React, { useEffect, useRef, useState } from "react";
+import React, { Suspense, useEffect, useRef, useState } from "react";
 import { BackSide, TextureLoader } from "three";
-import { styles } from '../utils'
+import { styles } from "../utils";
+import CanvasLoader from "./CanvasLoader";
 
 const Ball = ({ icon }) => {
   const planeRef = useRef();
@@ -41,7 +42,9 @@ const BallCanvas = ({ technology }) => {
     const loadIcon = async () => {
       try {
         const iconModule = await icon();
+        console.log(iconModule);
         const iconUrl = iconModule.default;
+        console.log(iconUrl);
         setResolvedIcon(iconUrl);
       } catch (error) {
         console.error("Icon load error: ", error);
@@ -54,11 +57,18 @@ const BallCanvas = ({ technology }) => {
   return (
     <>
       <Canvas>
-        <OrbitControls enableZoom={false} enableDamping dampingFactor={0.25} />
-        <Ball icon={resolvedIcon} />
+        <Suspense fallback={<CanvasLoader fontSize={20} />}>
+          <OrbitControls
+            enableZoom={false}
+            enableDamping
+            dampingFactor={0.25}
+          />
+          <Ball icon={resolvedIcon} />
+        </Suspense>
+        <Preload all />
       </Canvas>
       <p
-        className={`${styles.portfolioSmallerText} text-center text-white`}
+        className={`${styles.portfolioSmallerText} text-white text-center`}
         children={name}
       />
     </>
