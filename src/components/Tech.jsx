@@ -22,8 +22,8 @@ const determinateToRender = () => {
 // Rendering the technologies
 const Tech = () => {
   const ballSize =
-    "h-12 s:h-16 ls:w-24 sm:h-[6.5rem] md:h-[8.5rem] 1k:h-[10.3rem] 2k:h-[12.2rem] 4k:h-[20.5rem] w-12 s:w-16 ls:w-24 sm:w-[6.5rem] md:w-[8.5rem] 1k:w-[10.3rem] 2k:w-[12.2rem] 4k:w-[20.5rem]";
-  const ballGap = "gap-12 s:gap-2 md:gap-4 xl:gap-x-16 2k:gap-x-10 4k:gap-2";
+    "h-16 h-20 md:h-28 w-16 w-20 md:w-28";
+  const ballGap = "gap-x-6 md:gap-x-10 gap-y-10 md:gap-y-16";
 
   const ComponentToRender = determinateToRender();
 
@@ -36,18 +36,15 @@ const Tech = () => {
         Skills
       </motion.p>
       <div
-        className={`${ballGap} flex flex-wrap justify-center items-center pb-96`}
+        className={`${ballGap} gap- flex flex-wrap justify-center items-center pb-10 md:pb-12`}
       >
         {technologies.map((technology, index) => (
           <motion.div
-            variants={motions.fadeIn("spring", "right", 0.5 * index, 1)}
+            variants={motions.fadeIn("spring", "right", 0.2 * index, 1)}
             key={index}
             className={`${ballSize}`}
           >
-            <ComponentToRender technology={technology} />
-            <div className="">
-              <p className="block text-white text-center" children={technology.name} />
-            </div>
+            <ComponentToRender technology={technology} styles={styles} />
           </motion.div>
         ))}
       </div>

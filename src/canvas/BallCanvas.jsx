@@ -2,6 +2,7 @@ import { Float, OrbitControls } from "@react-three/drei";
 import { Canvas, useFrame, useLoader } from "@react-three/fiber";
 import React, { useEffect, useRef, useState } from "react";
 import { BackSide, TextureLoader } from "three";
+import { styles } from "../utils";
 
 const Ball = ({ icon }) => {
   const planeRef = useRef();
@@ -31,30 +32,33 @@ const Ball = ({ icon }) => {
   );
 };
 
-const BallCanvas = ({ technology }) => {
-  const { icon } = technology
+const BallCanvas = ({ technology, styles }) => {
+  const { icon, name } = technology;
 
-  const [resolvedIcon, setResolvedIcon] = useState()
+  const [resolvedIcon, setResolvedIcon] = useState();
 
   useEffect(() => {
     const loadIcon = async () => {
       try {
-        const iconModule = await icon()
-        const iconUrl = iconModule.default
-        setResolvedIcon(iconUrl)
+        const iconModule = await icon();
+        const iconUrl = iconModule.default;
+        setResolvedIcon(iconUrl);
       } catch (error) {
-        console.error("Icon load error: ", error)
+        console.error("Icon load error: ", error);
       }
-    }
+    };
 
-    loadIcon()
-  }, [])
+    loadIcon();
+  }, []);
 
   return (
-    <Canvas>
-      <OrbitControls enableZoom={false} enableDamping dampingFactor={0.25} />
-      <Ball icon={resolvedIcon} />
-    </Canvas>
+    <>
+      <Canvas>
+        <OrbitControls enableZoom={false} enableDamping dampingFactor={0.25} />
+        <Ball icon={resolvedIcon} />
+      </Canvas>
+      <p className={`${styles.portfolioSubText} text-center text-white block`} children={name} />
+    </>
   );
 };
 
