@@ -30,7 +30,7 @@ const Tech = () => {
     <>
       <motion.p
         variants={motions.fadeIn("spring", "down", 0.5, 0.75)}
-        className={`${styles.portfolioMainText} pt-12 pb-8 flex justify-center text-white neon-shadow tracking-widest 2k:mt-20 h3 4k:mt-32`}
+        className={`${styles.portfolioMainText} pt-12 pb-8 flex justify-center text-white neon-shadow tracking-widest 2k:mt-20 4k:mt-32`}
       >
         Skills
       </motion.p>
@@ -41,9 +41,9 @@ const Tech = () => {
           <motion.div
             variants={motions.fadeIn("spring", "right", 0.2 * index, 1)}
             key={index}
-            className={`${ballSize}`}
+            className={ballSize}
           >
-            <ComponentToRender technology={technology} styles={styles} />
+            <ComponentToRender technology={technology} />
           </motion.div>
         ))}
       </div>

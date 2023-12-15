@@ -2,7 +2,7 @@ import { Float, OrbitControls } from "@react-three/drei";
 import { Canvas, useFrame, useLoader } from "@react-three/fiber";
 import React, { useEffect, useRef, useState } from "react";
 import { BackSide, TextureLoader } from "three";
-import { styles } from "../utils";
+import { styles } from '../utils'
 
 const Ball = ({ icon }) => {
   const planeRef = useRef();
@@ -32,10 +32,10 @@ const Ball = ({ icon }) => {
   );
 };
 
-const BallCanvas = ({ technology, styles }) => {
+const BallCanvas = ({ technology }) => {
   const { icon, name } = technology;
 
-  const [resolvedIcon, setResolvedIcon] = useState();
+  const [resolvedIcon, setResolvedIcon] = useState(null);
 
   useEffect(() => {
     const loadIcon = async () => {
