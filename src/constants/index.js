@@ -98,4 +98,22 @@ const projects = [
   },
 ];
 
-export { navLinks, technologies, experiences, projects };
+const contact = [
+  {
+    name: "Linkedin",
+    reference: "https://www.linkedin.com/in/%E3%83%8A%E3%83%BC%E3%82%BB/",
+    icon: () => import("/contact/linkedin.svg"),
+  },
+  {
+    name: "Github",
+    reference: "https://github.com/KiyotakaDev",
+    icon: () => import("/contact/github.svg"),
+  },
+  {
+    name: "Instagram",
+    reference: "https://instagram.com/camo_sw",
+    icon: () => import("/contact/instagram.svg"),
+  },
+];
+
+export { navLinks, technologies, experiences, projects, contact };
