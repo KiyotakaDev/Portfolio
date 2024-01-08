@@ -33,7 +33,7 @@ const FooterImage = ({ contact }) => {
       {isLoading ? null : (
         <img
           src={resolvedIcon}
-          className="h-12 w-12 transition-transform transform hover:-translate-y-[1.5rem] hover:scale-110 active:translate-y-[1rem] active:scale-90"
+          className="h-12 w-12 transition-transform duration-300 transform hover:-translate-y-[1.5rem] hover:scale-110 active:translate-y-[1rem] active:scale-90"
           alt={name}
           loading="lazy"
         />
