@@ -74,17 +74,19 @@ const projects = [
   {
     name: "PokeAPI",
     description:
-      "API consumptio for sampling data fetched from the PokeAPI, filtered by type, and searchable by name or character",
+      "API consumptio for sampling data fetched from the PokeAPI, filtered by type, and searchable by name or character.",
     tags: [
       { name: "React", color: colors.react },
       { name: "Tailwind", color: colors.tailwind },
+      { name: "Zustand", color: colors.zustand }
     ],
-    image: () => import("/projects/pokeApi-project.png"),
+    image: () => import("/projects/Pokemon-API.png"),
     source_code_link: "https://github.com/KiyotakaDev/PokeApi",
+    deploy_link: "https://testing-olive-alpha.vercel.app/"
   },
   {
     name: "Chappy",
-    description: "Real-time chat application whit user authentication",
+    description: "Real-time chat application whit user authentication.",
     tags: [
       { name: "React", color: colors.react },
       { name: "Tailwind", color: colors.tailwind },
@@ -99,21 +101,21 @@ const projects = [
 ];
 
 const contact = [
-  {
-    name: "Linkedin",
-    reference: "https://www.linkedin.com/in/%E3%83%8A%E3%83%BC%E3%82%BB/",
-    icon: () => import("/contact/linkedin.svg"),
-  },
+  // {
+  //   name: "Linkedin",
+  //   reference: "https://www.linkedin.com/in/%E3%83%8A%E3%83%BC%E3%82%BB/",
+  //   icon: () => import("/contact/linkedin.svg"),
+  // },
   {
     name: "Github",
     reference: "https://github.com/KiyotakaDev",
     icon: () => import("/contact/github.svg"),
   },
-  {
-    name: "Instagram",
-    reference: "https://instagram.com/camo_sw",
-    icon: () => import("/contact/instagram.svg"),
-  },
+  // {
+  //   name: "Instagram",
+  //   reference: "https://instagram.com/camo_sw",
+  //   icon: () => import("/contact/instagram.svg"),
+  // },
 ];
 
 export { navLinks, technologies, experiences, projects, contact };
