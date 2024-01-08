@@ -4,9 +4,11 @@ import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import { projects } from "../constants";
 import github from "/others/github.png";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const ProjectCard = ({ project, index }) => {
-  const { name, description, image, tags, source_code_link } = project;
+  const { name, description, image, tags, source_code_link, deploy_link } =
+    project;
 
   const [resolvedProjectImage, setResolvedProjectImage] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
@@ -124,7 +126,15 @@ const ProjectCard = ({ project, index }) => {
             {name}
           </h3>
           <p className={`${styles.portfolioSmallerText} text-white`}>
-            {description}
+            {description}{" "}
+            {deploy_link ? (
+              <Link
+                className="hover:text-neon transition-colors duration-300"
+                to={deploy_link}
+              >
+                {"Got to deployment <-"}
+              </Link>
+            ) : null}
           </p>
         </div>
 
