@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { styles, motions } from "../utils";
+import { motions } from "../utils";
 import { navLinks } from "../constants";
 import { motion, useScroll, useMotionValueEvent } from "framer-motion";
 
@@ -112,7 +112,7 @@ const NavBar = () => {
         hidden: { y: "-100%" },
       }}
       animate={hidden ? "hidden" : "show"}
-      className={`${styles.navPadding} z-40 fixed top-0 left-0 w-full flex items-center bg-leveled-950 backdrop-filter backdrop-blur-sm bg-opacity-10`}
+      className="nav-padding z-40 fixed top-0 left-0 w-full flex items-center bg-leveled-950 backdrop-filter backdrop-blur-sm bg-opacity-10"
     >
       {/* Navbar bigger devices */}
       <div className="w-full flex justify-between">
@@ -127,11 +127,11 @@ const NavBar = () => {
           <img
             src="./logo.png"
             alt="logo"
-            className={`${styles.portfolioImg} rounded-full object-contain`}
+            className="portfolio-img rounded-full object-contain"
             loading="lazy"
           />
           <p
-            className={`${styles.portfolioMainText} text-white font-extrabold tracking-wider hidden s:block`}
+            className="main-text text-white font-extrabold tracking-wider hidden s:block"
           >
             Kiyotaka.dev
           </p>
@@ -139,7 +139,7 @@ const NavBar = () => {
 
         {/* Nav links for bigger devices */}
         <NavLinks
-          ulStyle={`${styles.portfolioLinkText} gap-7 hidden flex-row md:flex font-bold tracking-wider items-center`}
+          ulStyle="link-text gap-7 hidden flex-row md:flex font-bold tracking-wider items-center"
           active={active}
           setActive={setActive}
         />

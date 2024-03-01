@@ -1,6 +1,6 @@
 import React, { lazy, useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { styles, motions } from "../utils";
+import { motions } from "../utils";
 import { technologies } from "../constants";
 
 const BallCanvas = lazy(() => import("../canvas/BallCanvas"));
@@ -30,7 +30,7 @@ const Tech = () => {
     <>
       <motion.p
         variants={motions.fadeIn("spring", "down", 0.5, 0.75)}
-        className={`${styles.portfolioMainText} pt-12 pb-8 flex justify-center text-white neon-shadow tracking-widest 2k:mt-20 4k:mt-32`}
+        className="main-text pt-12 pb-8 flex justify-center text-white neon-shadow tracking-widest 2k:mt-20 4k:mt-32"
       >
         Skills
       </motion.p>

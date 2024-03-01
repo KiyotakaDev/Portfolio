@@ -1,5 +1,4 @@
 import React from "react";
-import { styles } from "../utils";
 
 const Head = () => {
   const containerDisplacement =
@@ -30,17 +29,17 @@ const Head = () => {
         {/*  pin <- */}
 
         {/* -> Head */}
-        <div className={`${styles.portfolioMainText} text-white tracking-wide`}>
+        <div className="main-text text-white tracking-wide">
           Hi I'm{" "}
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-leveled-400 to-iced-400 animate-pulse">
             Camilo
           </span>
           <div className="pt-1 lg:pt-3 2k:pt-5 4k:pt-6">
-            <p className={`${styles.portfolioSubText}`}>
+            <p className="sub-text">
               I develop <span className="text-leveled-300">Full Stack</span> web
               applications,{" "}
             </p>
-            <p className={`${styles.portfolioSubText}`}>
+            <p className="sub-text">
               user interfaces and{" "}
               <span className="text-iced-300">3D visuals.</span>
             </p>

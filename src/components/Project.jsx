@@ -1,5 +1,5 @@
 import SectionWrapper from "../hoc/SectionWrapper";
-import { styles, motions } from "../utils";
+import { motions } from "../utils";
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import { projects } from "../constants";
 import github from "/others/github.png";
@@ -125,11 +125,11 @@ const ProjectCard = ({ project, index }) => {
 
         <div className="sm:px-4 2k:px-10 4k:px-16">
           <h3
-            className={`${styles.portfolioSubText} text-white py-4 sm:py-6 2k:py-12 4k:py-16 neon-shadow tracking-wider`}
+            className="sub-text text-white py-4 sm:py-6 2k:py-12 4k:py-16 neon-shadow tracking-wider"
           >
             {name}
           </h3>
-          <p className={`${styles.portfolioSmallerText} text-white`}>
+          <p className="small-text text-white">
             {description}{" "}
             {deploy_link ? (
               <Link
@@ -146,7 +146,7 @@ const ProjectCard = ({ project, index }) => {
           {tags.map((tag, index) => (
             <p
               key={index}
-              className={`${styles.portfolioSmallerText} bg-clip-text text-transparent bg-gradient-to-br ${tag.id}`}
+              className={`small-text bg-clip-text text-transparent bg-gradient-to-br ${tag.id}`}
             >
               #{tag.name}
             </p>
@@ -161,8 +161,8 @@ const Projects = () => {
   return (
     <>
       <motion.div variants={motions.textVariants()}>
-        <p className={`${styles.portfolioSubText} text-leveled-300`}>My work</p>
-        <h2 className={`${styles.portfolioMainText} text-white neon-shadow`}>
+        <p className="sub-text text-leveled-300">My work</p>
+        <h2 className="main-text text-white neon-shadow">
           Projects
         </h2>
       </motion.div>

@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { contact } from "../constants";
-import { styles } from "../utils";
 import { Link } from "react-router-dom";
 
 const FooterImage = ({ contact }) => {
@@ -56,7 +55,7 @@ const Footer = () => {
         ))}
       </div>
       <p
-        className={`${styles.portfolioSubText} text-white gap-4 flex justify-center items-center mt-6 cursor-default`}
+        className="sub-text text-white gap-4 flex justify-center items-center mt-6 cursor-default"
       >
         Created with<span className="animate-pulse">❤️</span>by kiyotakaDev
       </p>

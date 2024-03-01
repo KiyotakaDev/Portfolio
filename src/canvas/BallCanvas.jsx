@@ -2,7 +2,6 @@ import { Float, OrbitControls, Preload } from "@react-three/drei";
 import { Canvas, useFrame, useLoader } from "@react-three/fiber";
 import React, { Suspense, useEffect, useRef, useState } from "react";
 import { BackSide, TextureLoader } from "three";
-import { styles } from "../utils";
 import CanvasLoader from "./CanvasLoader";
 
 const Ball = ({ icon }) => {
@@ -66,7 +65,7 @@ const BallCanvas = ({ technology }) => {
         <Preload all />
       </Canvas>
       <p
-        className={`${styles.portfolioSmallerText} text-white text-center`}
+        className="small-text text-white text-center"
         children={name}
       />
     </>

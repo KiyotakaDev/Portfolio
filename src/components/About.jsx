@@ -1,5 +1,5 @@
 import React, { lazy } from "react";
-import { motions, styles } from "../utils";
+import { motions } from "../utils";
 import { motion } from "framer-motion";
 import SectionWrapper from "../hoc/SectionWrapper";
 
@@ -10,12 +10,12 @@ const About = () => {
     <>
       <motion.div variants={motions.textVariants()}>
         <p
-          className={`${styles.portfolioSubText} text-leveled-300 tracking-wider`}
+          className="sub-text text-leveled-300 tracking-wider"
         >
           Introduction
         </p>
         <h2
-          className={`${styles.portfolioMainText} text-white neon-text tracking-widest`}
+          className="main-text text-white neon-text tracking-widest"
         >
           Overview
         </h2>
@@ -24,7 +24,7 @@ const About = () => {
       {/* Sub text */}
       <motion.p
         variants={motions.fadeIn("spring", "right", 0.1, 1)}
-        className={`${styles.portfolioSubText} mt-2 text-iced-50`}
+        className="sub-text mt-2 text-iced-50"
       >
         I'm a skilled software developer with experience in{" "}
         <span className="text-amber-300">JavaScript</span>, frameworks like{" "}
