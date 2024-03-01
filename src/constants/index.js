@@ -21,82 +21,87 @@ const technologies = [
 
 const experiences = [
   {
-    title: "PokeAPI",
-    company_name: "Personal experience",
-    icon: () => import("/experience/poke.png"),
-    iconBg: "#202020",
-    date: "September 2022 - November 2022",
-    points: [
-      "Querying data with async and await along with fecth",
-      "Quering data with .then() along with fetch",
-      "Data mapping for subsequent sampling",
-      "Routing usage",
-    ],
-  },
-  {
     title: "Application documenter",
     company_name: "Claro",
     icon: () => import("/companies/claro.png"),
     iconBg: "#fff",
-    date: "November 2022 - October 2023",
+    date: "September 2022 - October 2023",
     points: [
-      "In my intership whit the company they assigned me to document applications",
-      "Teamwork if there were problems with any application",
-      "Make queries to a database for subsequent sampling",
+      "Trained by an agile group of 5 people.",
+      "Read queries made in PL/SQL.",
+      "Functionality testing of applications made by other teams.",
+      "Application efficiency test.",
+      "Documentation of previously tested applications.",
     ],
   },
   {
-    title: "Chappy",
+    title: "Portfolio",
     company_name: "Personal experience",
     icon: () => import("/experience/chappy.png"),
     iconBg: "#202020",
-    date: "January 2023 - April 2023",
+    date: "October 2023 - December 2023",
     points: [
-      "User authentication",
-      "API REST",
-      "Use of MERN",
-      "More complex routing",
-      "Use of tokens for application and data security",
-      "Use of sockets for real-time chat",
+      "Higher-order components (HOCs).",
+      "Use of routing.",
+      "ThreeJS along with React-fiber.",
+      "Framer Motion for animations.",
+      "Use of custo shaders.",
+      "Dynamic imports.",
+      "Use of sync and async components load.",
+    ],
+  },
+  {
+    title: "PokeAPI",
+    company_name: "Personal experience",
+    icon: () => import("/experience/poke.png"),
+    iconBg: "#202020",
+    date: "December 2023 - January 2024",
+    points: [
+      "API consumption.",
+      "Use of zustand for state management.",
+      "Data mapping for subsequent sampling",
+      "Routing usage",
     ],
   },
 ];
 
-const colors = {
-  react: "from-white via-blue-500 to-blue-700",
-  tailwind: "rom-white via-neon to-sky-500",
-  zustand: "from-white via-orange-500 to-amber-700",
-  mongo: "from-white via-emerald-500 to-green-700",
-  express: "from-white via-pink-500 to-red-700",
-  socket: "from-white to-black",
-};
 const projects = [
+  {
+    name: "Portfolio",
+    description: "My personal portfolio :D.",
+    tags: [
+      { name: "ReactJS", id: "react" },
+      { name: "TailwindCSS", id: "tailwind" },
+      { name: "ThreeJS", id: "three" },
+      { name: "Framer Motion", id: "framer" },
+      { name: "React Router", id: "router" },
+    ],
+    image: () => import("/projects/Portfolio.png"),
+    source_code_link: "https://github.com/KiyotakaDev/Portfolio",
+  },
   {
     name: "PokeAPI",
     description:
-      "API consumptio for sampling data fetched from the PokeAPI, filtered by type, and searchable by name or character.",
+      "API consumptio for sampling data fetched from the PokeAPI. Searchable by name or character.",
     tags: [
-      { name: "React", color: colors.react },
-      { name: "Tailwind", color: colors.tailwind },
-      { name: "Zustand", color: colors.zustand }
+      { name: "React", id: "react" },
+      { name: "TailwindCSS", id: "tailwind" },
+      { name: "Zustand", id: "zustand" },
+      { name: "React Router", id: "router" },
     ],
     image: () => import("/projects/Pokemon-API.png"),
     source_code_link: "https://github.com/KiyotakaDev/PokeApi",
-    deploy_link: "https://testing-olive-alpha.vercel.app/"
+    deploy_link: "https://testing-olive-alpha.vercel.app/",
   },
   {
-    name: "Chappy",
-    description: "Real-time chat application whit user authentication.",
+    name: "Heisig Template",
+    description: "Anki template with Japanese recognition for Kanji learning.",
     tags: [
-      { name: "React", color: colors.react },
-      { name: "Tailwind", color: colors.tailwind },
-      { name: "Zustand", color: colors.zustand },
-      { name: "Mongo", color: colors.mongo },
-      { name: "Express", color: colors.express },
-      { name: "Socket", color: colors.socket },
+      { name: "HTLM", id: "three" },
+      { name: "CSS", id: "tailwind" },
     ],
-    image: () => import("/projects/chappy-project.png"),
-    source_code_link: "https://github.com/KiyotakaDev/chappy-",
+    image: () => import("/projects/heisig.png"),
+    source_code_link: "https://github.com/KiyotakaDev/Portfolio",
   },
 ];
 
@@ -111,11 +116,6 @@ const contact = [
     reference: "https://github.com/KiyotakaDev",
     icon: () => import("/contact/github.svg"),
   },
-  // {
-  //   name: "Instagram",
-  //   reference: "https://instagram.com/camo_sw",
-  //   icon: () => import("/contact/instagram.svg"),
-  // },
 ];
 
 export { navLinks, technologies, experiences, projects, contact };
