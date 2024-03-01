@@ -56,9 +56,9 @@ const Footer = () => {
         ))}
       </div>
       <p
-        className={`${styles.portfolioSubText} text-white flex justify-center items-center mt-6 cursor-default`}
+        className={`${styles.portfolioSubText} text-white gap-4 flex justify-center items-center mt-6 cursor-default`}
       >
-        Created with <span className="animate-pulse">❤️</span> by kiyotakaDev
+        Created with<span className="animate-pulse">❤️</span>by kiyotakaDev
       </p>
     </footer>
   );
