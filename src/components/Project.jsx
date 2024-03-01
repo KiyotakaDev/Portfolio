@@ -91,8 +91,8 @@ const ProjectCard = ({ project, index }) => {
         {/* Project image */}
         <div
           style={{
-            transform: "translateZ(100px)",
             transformStyle: "preserve-3d",
+            transform: "translateZ(100px)",
           }}
           className="relative w-full h-full shadow-2xl"
         >
@@ -104,7 +104,11 @@ const ProjectCard = ({ project, index }) => {
               loading="lazy"
             />
           )}
-          <div className="absolute inset-0 flex justify-end m-3">
+          <div style={{
+              transformStyle: 'preserve-3d',
+            transform: "translateZ(40px)",
+
+            }} className="absolute inset-0 flex justify-end m-3">
             <div
               onClick={() => window.open(source_code_link, "_blank")}
               className="bg-gradient-to-br from-slate-700 to-black w-12 2k:w-16 4k:w-24 h-12 2k:h-16 4k:h-24 rounded-full flex justify-center items-center cursor-pointer"
@@ -142,7 +146,7 @@ const ProjectCard = ({ project, index }) => {
           {tags.map((tag, index) => (
             <p
               key={index}
-              className={`${styles.portfolioSmallerText} bg-clip-text text-transparent bg-gradient-to-br ${tag.color}`}
+              className={`${styles.portfolioSmallerText} bg-clip-text text-transparent bg-gradient-to-br ${tag.id}`}
             >
               #{tag.name}
             </p>
