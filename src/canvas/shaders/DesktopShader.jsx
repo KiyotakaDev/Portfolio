@@ -2,7 +2,7 @@ import { shaderMaterial } from "@react-three/drei";
 import { extend } from "@react-three/fiber";
 import React from "react";
 
-const LowPowerCustomShader = shaderMaterial(
+const DesktopCustomShader = shaderMaterial(
   { uTime: 0 },
   `
     uniform float uTime;
@@ -33,13 +33,13 @@ const LowPowerCustomShader = shaderMaterial(
   `
 );
 
-extend({ LowPowerCustomShader });
+extend({ DesktopCustomShader });
 
 const LowPowerShader = ({ meshRef }) => {
   return (
     <mesh ref={meshRef}>
       <sphereGeometry args={[1, 32, 32]} />
-      <lowPowerCustomShader wireframe={true} />
+      <desktopCustomShader wireframe={true} />
     </mesh>
   );
 };

@@ -4,30 +4,24 @@ import { MathUtils } from "three";
 import CanvasLoader from "./CanvasLoader";
 import { Preload } from "@react-three/drei";
 
-const HighPowerShader = lazy(() => import("./shaders/HighPowerShader"));
-const LowPowerShader = lazy(() => import("./shaders/LowPowerShader"));
+const DesktopShader = lazy(() => import("./shaders/DesktopShader"));
 const MobileShader = lazy(() => import("./shaders/MobileShader"));
 
 const determinateShaderToRender = () => {
   // Thresholds based on performance
-  const highPowerThreshold = 12; // CPU cores based
-  const lowPowerThreshold = 8; // RAM amount based
+  // const highPowerThreshold = 12; // CPU cores based
+  // const lowPowerThreshold = 8; // RAM amount based
 
-  const cpuCores = navigator.hardwareConcurrency || 4; // User CPU cores assume 4 cores
-  const aviableMemory = navigator.deviceMemory || 8; // User RAM assume 8GB
+  // const cpuCores = navigator.hardwareConcurrency || 4; // User CPU cores assume 4 cores
+  // const aviableMemory = navigator.deviceMemory || 8; // User RAM assume 8GB
 
   // Checking if it's mobile
   const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 
   if (isMobile) {
     return MobileShader; // Mobile shader
-  } else if (
-    cpuCores >= highPowerThreshold &&
-    aviableMemory >= lowPowerThreshold
-  ) {
-    return HighPowerShader; // High power shader
-  } else if (cpuCores <= lowPowerThreshold) {
-    return LowPowerShader; // Low power shader
+  } else if (!isMobile) {
+    return DesktopShader; // Low power shader
   } else {
     return MobileShader; // Fallback
   }
