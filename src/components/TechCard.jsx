@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { styles } from '../utils'
 
 const TechCard = ({ technology }) => {
   const { icon, name } = technology;
@@ -28,7 +27,7 @@ const TechCard = ({ technology }) => {
         </div>
       </div>
       <p
-        className={`${styles.portfolioSmallerText} text-white text-center`}
+        className="small-text text-white text-center"
         children={name}
       />
     </>
