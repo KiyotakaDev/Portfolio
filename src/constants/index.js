@@ -17,6 +17,9 @@ const technologies = [
   { name: "MongoDB", icon: () => import("/tech/mongodb.png") },
   { name: "Git", icon: () => import("/tech/git.png") },
   { name: "C#", icon: () => import("/tech/csharp.png") },
+  { name: ".NET", icon: () => import("/tech/net.png") },
+  { name: "PostgreSQL", icon: () => import("/tech/postgres.png") },
+  { name: "Flutter", icon: () => import("/tech/flutter.png") },
 ];
 
 const experiences = [
