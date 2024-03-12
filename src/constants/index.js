@@ -109,11 +109,11 @@ const projects = [
 ];
 
 const contact = [
-  // {
-  //   name: "Linkedin",
-  //   reference: "https://www.linkedin.com/in/%E3%83%8A%E3%83%BC%E3%82%BB/",
-  //   icon: () => import("/contact/linkedin.svg"),
-  // },
+  {
+    name: "Linkedin",
+    reference: "https://www.linkedin.com/in/camilo-solarte/",
+    icon: () => import("/contact/linkedin.svg"),
+  },
   {
     name: "Github",
     reference: "https://github.com/KiyotakaDev",
