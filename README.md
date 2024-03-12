@@ -8,9 +8,7 @@ Preview:
 
 [Deploy link](https://portfolio-virid-seven-69.vercel.app/)
 
-Here I present the main technologies that I have used:
-
-## Technologies
+## The main technologies that I have used
 
 - **ViteJS (v5.0.8):** Used as the main framework to build dynamic user interfaces.
 - **TailwindCSS (v3.3.6):** Utility design framework for fast and consistent development.
