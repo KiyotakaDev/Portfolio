@@ -1,6 +1,14 @@
 # Portfolio
 
-Welcome to my portfolio. Here I present the main technologies that I have used:
+Welcome to my portfolio. 
+
+Preview:
+
+![portfolio](/public/projects/Portfolio.png)
+
+[Deploy link](https://portfolio-virid-seven-69.vercel.app/)
+
+Here I present the main technologies that I have used:
 
 ## Technologies
 
