@@ -49,6 +49,9 @@
   .framer {
     @apply from-white via-pink-600 to-purple-600;
   }
+  .bash {
+    @apply from-purple-600 from-30% via-sky-400 to-green-500 to-80%;
+  }
 
   /* Nav styles */
   .nav-padding {
