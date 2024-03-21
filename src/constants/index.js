@@ -106,6 +106,14 @@ const projects = [
     image: () => import("/projects/heisig.png"),
     source_code_link: "https://github.com/KiyotakaDev/Portfolio",
   },
+  {
+    name: "Hyprbash",
+    description: "Automated installation of personal hyprland configuration for Arch Linux.",
+    tags: [
+      { name: "Bash", id: "bash" }
+    ],
+    source_code_link: "https://github.com/KiyotakaDev/HyprBash"
+  }
 ];
 
 const contact = [
