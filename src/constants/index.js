@@ -84,8 +84,7 @@ const projects = [
   },
   {
     name: "PokeAPI",
-    description:
-      "API consumptio for sampling data fetched from the PokeAPI. Searchable by name or character.",
+    description: "PokeAPI consumption, pokemon search, pokemon data.",
     tags: [
       { name: "React", id: "react" },
       { name: "TailwindCSS", id: "tailwind" },
@@ -108,13 +107,12 @@ const projects = [
   },
   {
     name: "Hyprbash",
-    description: "Automated installation of personal hyprland configuration for Arch Linux.",
+    description:
+      "Automated installation of personal hyprland configuration for Arch Linux.",
     image: () => import("/projects/Working.png"),
-    tags: [
-      { name: "Bash", id: "bash" }
-    ],
-    source_code_link: "https://github.com/KiyotakaDev/HyprBash"
-  }
+    tags: [{ name: "Bash", id: "bash" }],
+    source_code_link: "https://github.com/KiyotakaDev/HyprBash",
+  },
 ];
 
 const contact = [
