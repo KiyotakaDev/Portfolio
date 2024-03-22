@@ -81,34 +81,37 @@ const ProjectCard = ({ project, index }) => {
         rotateX: rotateX,
         rotateY: rotateY,
       }}
-      className="p-2 sm:p-6 md:p-10 w-full xl:w-1/2 rounded-2xl bg-gradient-to-br from-leveled-600 to-leveled-800 to-50% mt-8"
+      className="rounded-2xl bg-gradient-to-br from-leveled-600 to-leveled-800 to-50% p-6 pb-10"
     >
       {/* Cristal */}
       <div
         style={{ transform: "translateZ(75px)", transformStyle: "preserve-3d" }}
-        className="inset-4 place-content-center bg-neon rounded-xl shadow-lg shadow-neon p-3 xl:p-10 bg-opacity-10"
+        className="h-full flex flex-col justify-between border border-sky-300 bg-neon rounded-xl shadow-lg shadow-neon p-3 xl:p-6 bg-opacity-10"
       >
-        {/* Project image */}
+        {/* Image container */}
         <div
           style={{
             transformStyle: "preserve-3d",
             transform: "translateZ(100px)",
           }}
-          className="relative project-img w-full"
+          className=""
         >
           {isLoading ? null : (
             <img
               src={resolvedProjectImage}
               alt="project_image"
-              className="w-full h-full object-center object-fit rounded-lg shadow-2xl"
+              className="rounded-2xl shadow-2xl object-scale-down"
               loading="lazy"
             />
           )}
-          <div style={{
-              transformStyle: 'preserve-3d',
-            transform: "translateZ(40px)",
-
-            }} className="absolute inset-0 flex justify-end m-3">
+          {/* Github */}
+          <div
+            style={{
+              transformStyle: "preserve-3d",
+              transform: "translateZ(40px)",
+            }}
+            className="absolute inset-0 flex justify-end"
+          >
             <div
               onClick={() => window.open(source_code_link, "_blank")}
               className="bg-gradient-to-br from-slate-700 to-black w-12 2k:w-16 4k:w-24 h-12 2k:h-16 4k:h-24 rounded-full flex justify-center items-center cursor-pointer"
@@ -123,34 +126,39 @@ const ProjectCard = ({ project, index }) => {
           </div>
         </div>
 
-        <div className="sm:px-4 2k:px-10 4k:px-16">
-          <h3
-            className="sub-text text-white py-4 sm:py-6 2k:py-12 4k:py-16 neon-shadow tracking-wider"
-          >
+        {/* Info container */}
+        <div>
+          <h3 className="sub-text text-white py-4 sm:py-6 2k:py-12 4k:py-16 neon-shadow tracking-wider">
             {name}
           </h3>
-          <p className="small-text text-white h-[5.5rem] overflow-y-scroll">
-            {description}{" "}
-            {deploy_link ? (
-              <Link
-                className="hover:text-neon transition-colors duration-300"
-                to={deploy_link}
-              >
-                {"Got to deployment <-"}
-              </Link>
-            ) : null}
-          </p>
-        </div>
-
-        <div className="sm:p-6 2k:p-12 4k:p-20 flex flex-wrap gap-5">
-          {tags.map((tag, index) => (
-            <p
-              key={index}
-              className={`small-text bg-clip-text text-transparent bg-gradient-to-br ${tag.id}`}
-            >
-              #{tag.name}
-            </p>
-          ))}
+          {/* Info */}
+          <div className="flex flex-col">
+            {/* Project description */}
+            <div>
+              <p className="small-text text-white h-[5.5rem]">
+                {description}{" "}
+                {deploy_link ? (
+                  <Link
+                    className="hover:text-neon transition-colors duration-300"
+                    to={deploy_link}
+                  >
+                    {"Got to deployment <-"}
+                  </Link>
+                ) : null}
+              </p>
+            </div>
+            {/* Tags */}
+            <div className="flex flex-wrap gap-x-6 gap-y-1">
+              {tags.map((tag, index) => (
+                <p
+                  key={index}
+                  className={`small-text bg-clip-text text-transparent bg-gradient-to-br ${tag.id}`}
+                >
+                  #{tag.name}
+                </p>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </motion.div>
@@ -162,12 +170,10 @@ const Projects = () => {
     <>
       <motion.div variants={motions.textVariants()}>
         <p className="sub-text text-leveled-300">My work</p>
-        <h2 className="main-text text-white neon-shadow">
-          Projects
-        </h2>
+        <h2 className="main-text text-white neon-shadow">Projects</h2>
       </motion.div>
 
-      <div className="mt-12 flex flex-wrap justify-center items-center pb-28">
+      <div className="my-12 grid grid-cols-2 gap-x-8 gap-y-10">
         {projects.map((project, index) => (
           <ProjectCard key={`project-${index}`} project={project} />
         ))}
