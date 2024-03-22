@@ -92,7 +92,7 @@ const projects = [
       { name: "Zustand", id: "zustand" },
       { name: "React Router", id: "router" },
     ],
-    image: () => import("/projects/Pokemon-API.png"),
+    image: () => import("/projects/PokemonAPI.png"),
     source_code_link: "https://github.com/KiyotakaDev/PokeApi",
     deploy_link: "https://testing-olive-alpha.vercel.app/",
   },
@@ -103,12 +103,13 @@ const projects = [
       { name: "HTLM", id: "three" },
       { name: "CSS", id: "tailwind" },
     ],
-    image: () => import("/projects/heisig.png"),
+    image: () => import("/projects/Heisig.png"),
     source_code_link: "https://github.com/KiyotakaDev/Portfolio",
   },
   {
     name: "Hyprbash",
     description: "Automated installation of personal hyprland configuration for Arch Linux.",
+    image: () => import("/projects/Working.png"),
     tags: [
       { name: "Bash", id: "bash" }
     ],
