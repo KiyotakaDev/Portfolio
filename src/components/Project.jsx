@@ -173,7 +173,7 @@ const Projects = () => {
         <h2 className="main-text text-white neon-shadow">Projects</h2>
       </motion.div>
 
-      <div className="my-12 grid grid-cols-2 gap-x-8 gap-y-10">
+      <div className="my-12 grid grid-cols-1 xl:grid-cols-2 gap-x-8 gap-y-10">
         {projects.map((project, index) => (
           <ProjectCard key={`project-${index}`} project={project} />
         ))}
