@@ -94,13 +94,13 @@ const ProjectCard = ({ project, index }) => {
             transformStyle: "preserve-3d",
             transform: "translateZ(100px)",
           }}
-          className="relative w-full h-full shadow-2xl"
+          className="relative project-img w-full"
         >
           {isLoading ? null : (
             <img
               src={resolvedProjectImage}
               alt="project_image"
-              className="w-full h-full object-center object-cover rounded-lg"
+              className="w-full h-full object-center object-fit rounded-lg shadow-2xl"
               loading="lazy"
             />
           )}
@@ -129,7 +129,7 @@ const ProjectCard = ({ project, index }) => {
           >
             {name}
           </h3>
-          <p className="small-text text-white">
+          <p className="small-text text-white h-[5.5rem] overflow-y-scroll">
             {description}{" "}
             {deploy_link ? (
               <Link
@@ -142,7 +142,7 @@ const ProjectCard = ({ project, index }) => {
           </p>
         </div>
 
-        <div className="mt-5 sm:p-6 2k:p-12 4k:p-20 flex flex-wrap gap-5">
+        <div className="sm:p-6 2k:p-12 4k:p-20 flex flex-wrap gap-5">
           {tags.map((tag, index) => (
             <p
               key={index}
