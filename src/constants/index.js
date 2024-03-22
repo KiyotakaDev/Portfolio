@@ -40,8 +40,8 @@ const experiences = [
   {
     title: "Portfolio",
     company_name: "Personal experience",
-    icon: () => import("/experience/chappy.png"),
-    iconBg: "#202020",
+    icon: () => import("/experience/portfolio.png"),
+    iconBg: "#404040",
     date: "October 2023 - December 2023",
     points: [
       "Higher-order components (HOCs).",
@@ -57,13 +57,26 @@ const experiences = [
     title: "PokeAPI",
     company_name: "Personal experience",
     icon: () => import("/experience/poke.png"),
-    iconBg: "#202020",
+    iconBg: "#FFF",
     date: "December 2023 - January 2024",
     points: [
       "API consumption.",
       "Use of zustand for state management.",
-      "Data mapping for subsequent sampling",
-      "Routing usage",
+      "Data mapping for subsequent sampling.",
+      "Routing usage.",
+    ],
+  },
+  {
+    title: "Hyprbash",
+    company_name: "Personal experience",
+    icon: () => import("/experience/hyprbash.png"),
+    iconBg: "#404040",
+    date: "February 2024 - Currently",
+    points: [
+      "Automatize scripts using bash.",
+      "Personal Hyprland configuration.",
+      "Bash commands.",
+      "Arch Linux distro usage.",
     ],
   },
 ];
