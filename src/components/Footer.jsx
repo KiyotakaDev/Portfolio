@@ -32,7 +32,7 @@ const FooterImage = ({ contact }) => {
       {isLoading ? null : (
         <img
           src={resolvedIcon}
-          className="h-12 w-12 transition-transform duration-300 transform hover:-translate-y-[1.5rem] hover:scale-110 active:translate-y-[1rem] active:scale-90"
+          className="h-10 w-10 transition-transform duration-300 transform hover:-translate-y-[1.5rem] hover:scale-110 active:translate-y-[1rem] active:scale-90"
           alt={name}
           loading="lazy"
         />
@@ -43,8 +43,8 @@ const FooterImage = ({ contact }) => {
 
 const Footer = () => {
   return (
-    <footer className="py-10 bg-gradient-to-b from-leveled-700 to-leveled-950">
-      <div className="flex justify-center items-center gap-x-16">
+    <footer className="py-5 bg-gradient-to-b from-leveled-700 to-leveled-950">
+      <div className="flex justify-center items-center gap-x-10">
         {contact.map((contact, index) => (
           <Link
             key={index}
@@ -54,11 +54,15 @@ const Footer = () => {
           />
         ))}
       </div>
-      <p
-        className="sub-text text-white gap-4 flex justify-center items-center mt-6 cursor-default"
-      >
-        Created with<span className="animate-pulse">❤️</span>by kiyotakaDev
-      </p>
+      <div className="sub-text text-white gap-2 flex flex-col justify-center items-center mt-6 cursor-default">
+        <p>
+          Created with<span className="animate-pulse">❤️</span>by kiyotakaDev
+        </p>
+        <p className="text-2xl tracking-wide text-white/60">
+          <b className="text-white">C</b>amilo <b className="text-white">S</b>
+          olarte <b className="text-white">B</b>etancourth &copy; 2024
+        </p>
+      </div>
     </footer>
   );
 };
