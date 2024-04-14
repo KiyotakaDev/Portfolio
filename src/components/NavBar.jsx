@@ -133,7 +133,7 @@ const NavBar = () => {
           <p
             className="main-text text-white font-extrabold tracking-wider hidden s:block"
           >
-            Kiyotaka.dev
+            CSB
           </p>
         </Link>
 
