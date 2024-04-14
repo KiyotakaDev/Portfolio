@@ -67,6 +67,14 @@ const experiences = [
     ],
   },
   {
+    title: "Ecommerce",
+    company_name: "Personal experience",
+    icon: () => import("/experience/next.png"),
+    iconBg: "#FFF",
+    date: "April 2024",
+    points: ["Use of NextJS.", "Use of prisma with PostgreSQL.", "Next-Auth."],
+  },
+  {
     title: "Hyprbash",
     company_name: "Personal experience",
     icon: () => import("/experience/hyprbash.png"),
@@ -117,6 +125,19 @@ const projects = [
     ],
     image: () => import("/projects/Heisig.png"),
     source_code_link: "https://github.com/KiyotakaDev/Portfolio",
+  },
+  {
+    name: "Ecommerce",
+    description: "Ecommerce full-stack app using NextJS.",
+    image: () => import("/projects/Ecommerce.png"),
+    tags: [
+      { name: "NextJS", id: "next" },
+      { name: "TailwindCSS", id: "tailwind" },
+      { name: "Zustand", id: "zustand" },
+      { name: "Prisma", id: "prisma" },
+      { name: "Framer Motion", id: "framer" },
+    ],
+    source_code_link: "https://github.com/KiyotakaDev/Ecommerce",
   },
   {
     name: "Hyprbash",
