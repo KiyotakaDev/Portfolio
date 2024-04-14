@@ -52,6 +52,12 @@
   .bash {
     @apply from-purple-600 from-30% via-sky-400 to-green-500 to-80%;
   }
+  .next {
+    @apply from-white;
+  }
+  .prisma {
+    @apply bg-gradient-to-l from-iced-500 via-white to-iced-500;
+  }
 
   /* Nav styles */
   .nav-padding {
