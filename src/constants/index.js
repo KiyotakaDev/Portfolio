@@ -24,11 +24,11 @@ const technologies = [
 
 const experiences = [
   {
-    title: "Application documenter",
+    title: "Software Developer",
     company_name: "Claro",
     icon: () => import("/companies/claro.png"),
     iconBg: "#fff",
-    date: "September 2022 - October 2023",
+    date: "2022 - 2023",
     points: [
       "Trained by an agile group of 5 people.",
       "Read queries made in PL/SQL.",
@@ -42,7 +42,7 @@ const experiences = [
     company_name: "Personal experience",
     icon: () => import("/experience/portfolio.png"),
     iconBg: "#404040",
-    date: "October 2023 - December 2023",
+    date: "2023 - 2023",
     points: [
       "Higher-order components (HOCs).",
       "Use of routing.",
@@ -58,7 +58,7 @@ const experiences = [
     company_name: "Personal experience",
     icon: () => import("/experience/poke.png"),
     iconBg: "#FFF",
-    date: "December 2023 - January 2024",
+    date: "2023 - 2024",
     points: [
       "API consumption.",
       "Use of zustand for state management.",
@@ -79,7 +79,7 @@ const experiences = [
     company_name: "Personal experience",
     icon: () => import("/experience/hyprbash.png"),
     iconBg: "#404040",
-    date: "February 2024 - Currently",
+    date: "2024 - Currently",
     points: [
       "Automatize scripts using bash.",
       "Personal Hyprland configuration.",
