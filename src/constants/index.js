@@ -104,6 +104,19 @@ const projects = [
     source_code_link: "https://github.com/KiyotakaDev/Portfolio",
   },
   {
+    name: "Ecommerce",
+    description: "Ecommerce full-stack app using NextJS.",
+    image: () => import("/projects/Ecommerce.png"),
+    tags: [
+      { name: "NextJS", id: "next" },
+      { name: "TailwindCSS", id: "tailwind" },
+      { name: "Zustand", id: "zustand" },
+      { name: "Prisma", id: "prisma" },
+      { name: "Framer Motion", id: "framer" },
+    ],
+    source_code_link: "https://github.com/KiyotakaDev/Ecommerce",
+  },
+  {
     name: "PokeAPI",
     description: "PokeAPI consumption, pokemon search, pokemon data.",
     tags: [
@@ -125,19 +138,6 @@ const projects = [
     ],
     image: () => import("/projects/Heisig.png"),
     source_code_link: "https://github.com/KiyotakaDev/Portfolio",
-  },
-  {
-    name: "Ecommerce",
-    description: "Ecommerce full-stack app using NextJS.",
-    image: () => import("/projects/Ecommerce.png"),
-    tags: [
-      { name: "NextJS", id: "next" },
-      { name: "TailwindCSS", id: "tailwind" },
-      { name: "Zustand", id: "zustand" },
-      { name: "Prisma", id: "prisma" },
-      { name: "Framer Motion", id: "framer" },
-    ],
-    source_code_link: "https://github.com/KiyotakaDev/Ecommerce",
   },
   {
     name: "Hyprbash",
