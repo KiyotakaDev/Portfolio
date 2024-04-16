@@ -120,7 +120,7 @@ const projects = [
     name: "Hyprbash",
     description:
       "Automated installation of personal hyprland configuration for Arch Linux.",
-    image: () => import("/projects/Working.png"),
+    image: () => import("/projects/Progress.jpg"),
     tags: [{ name: "Bash", id: "bash" }],
     source_code_link: "https://github.com/KiyotakaDev/HyprBash",
   },
