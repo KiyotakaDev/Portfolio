@@ -117,6 +117,14 @@ const projects = [
     source_code_link: "https://github.com/KiyotakaDev/Ecommerce",
   },
   {
+    name: "Hyprbash",
+    description:
+      "Automated installation of personal hyprland configuration for Arch Linux.",
+    image: () => import("/projects/Working.png"),
+    tags: [{ name: "Bash", id: "bash" }],
+    source_code_link: "https://github.com/KiyotakaDev/HyprBash",
+  },
+  {
     name: "PokeAPI",
     description: "PokeAPI consumption, pokemon search, pokemon data.",
     tags: [
@@ -138,14 +146,6 @@ const projects = [
     ],
     image: () => import("/projects/Heisig.png"),
     source_code_link: "https://github.com/KiyotakaDev/Portfolio",
-  },
-  {
-    name: "Hyprbash",
-    description:
-      "Automated installation of personal hyprland configuration for Arch Linux.",
-    image: () => import("/projects/Working.png"),
-    tags: [{ name: "Bash", id: "bash" }],
-    source_code_link: "https://github.com/KiyotakaDev/HyprBash",
   },
 ];
 
